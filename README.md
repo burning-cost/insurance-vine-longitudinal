@@ -116,6 +116,11 @@ Yang, L. & Czado, C. (2022). Two-part D-vine copula models for longitudinal insu
 
 Shi, P. & Zhao, Z. (2024). Enhanced pricing and management of bundled insurance risks with dependence-aware prediction using pair copula construction. *Journal of Econometrics*, 240(1), 105676.
 
+## Performance
+
+No formal benchmark yet. The D-vine copula adds value over NCD scales when there is genuine temporal claim persistence in the GLM residuals beyond what the rating factors capture. The truncation level selection (by BIC) tells you the Markov order: if BIC selects p=1, the model adds modest lift; if it selects p=2 or higher, the temporal structure is strong and the copula premium will diverge meaningfully from the NCD table. On UK motor data, Yang & Czado (2022) found that the two-part D-vine consistently outperformed separate GLMs for next-year premium prediction, with the improvement concentrated in policyholders with 2+ years of history. The library's experience_relativity() output is the direct comparison: a relativity above 1.0 means the copula charges more than the GLM a priori; a relativity below 1.0 means it charges less. The spread of this distribution across the book indicates how much lift the model adds over flat NCD.
+
+
 ## Licence
 
 MIT
